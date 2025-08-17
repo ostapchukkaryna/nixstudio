@@ -5,6 +5,7 @@ import { provideClientHydration, withEventReplay } from '@angular/platform-brows
 import { provideAnimationsAsync } from '@angular/platform-browser/animations/async';
 import { providePrimeNG } from 'primeng/config';
 import Aura from '@primeng/themes/aura';
+import NixPreset from './nix-preset';
 
 export const appConfig: ApplicationConfig = {
   providers: [
@@ -12,7 +13,11 @@ export const appConfig: ApplicationConfig = {
     provideAnimationsAsync(),
     providePrimeNG({
         theme: {
-            preset: Aura
-        }
+            preset: NixPreset, // Use the custom Nix preset
+            // options: {
+            //   darkModeSelector: 'none'
+            // }
+        },
+
     })]
 };
